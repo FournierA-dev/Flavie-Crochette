@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  string: MyString
+  type: 
+  description: MyText
+  creation_date: 2019-08-14 17:14:53
+  salable: false
+
+two:
+  name: MyString
+  string: MyString
+  type: 
+  description: MyText
+  creation_date: 2019-08-14 17:14:53
+  salable: false

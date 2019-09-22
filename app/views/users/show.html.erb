@@ -1,0 +1,65 @@
+
+<br><br>
+<section class ="container mt-3">
+  <div class=" p-1 mt-1 bg-secondary text-white">
+      <div class="row text-left">
+          <div class="col-2 pl-4" style= "height: 80px">
+              <img class="img-fluid img-thumbnail float-left mh-100" src="<%= Faker::LoremFlickr.grayscale_image %>" alt="user_img">
+          </div>
+          <div class="col-7 text-left pl-5">
+              <h3 class="section-title"> Vos informations personnelles  </h3>
+          </div>
+          <div class="col-3 text-right align-middle">
+            <a href="#eventlist" class="btn btn-primary">Event <span class="badge badge-light px-2"><%= @user.proposed_events.count %><span></a>
+          </div>
+      </div>
+  </div>
+
+  <table class="table table-hover my-2">
+
+    <tbody>
+      <% @column_names.each do |col_name| %>
+        <tr>
+          <th scope="row col-3"><%=col_name.capitalize.gsub("_"," ") %></th>
+          <td class="col-9"><%= @user[col_name] %></td>
+        </tr>
+      <% end %>
+        <th scope="row col-3">Identifiants de connexion</th>
+        <td class="col-9"><a href="<%= edit_user_registration_path(@user) %>" class="btn btn-warning">MODIFIER</a></td>
+    </tbody>
+  </table>
+
+</section>
+
+<% if @user.proposed_events.count != 0 %>
+<section class="container">
+  <div class=" p-1 mt-5 bg-secondary text-white">
+      <div class="row text-left">
+          <div class="col-9 text-left pl-5">
+              <h3 class="section-title"> Vos propositions d'événnements accéptés par Flavie Crochette </h3>
+          </div>
+          <div class="col-3 text-right align-middle">
+            <a href="#eventlist" class="btn btn-primary">Evénnements <span class="badge badge-light px-2"><%= @user.proposed_events.count %><span></a>
+          </div>
+      </div>
+  </div>
+<%= render partial: 'events/eventsList', locals: {events: @user.proposed_events} %>
+</section>
+<% end %>
+
+<% if @user.attended_events.count != 0 %>
+<section class="container">
+  <div class=" p-1 mt-5 bg-secondary text-white">
+      <div class="row text-left">
+          <div class="col-9 text-left pl-5">
+              <h3 class="section-title"> Vos participations aux événnements Flavie Crochette </h3>
+          </div>
+          <div class="col-3 text-right align-middle">
+            <a href="#eventlist" class="btn btn-primary">Evénnements <span class="badge badge-light px-2"><%= @user.attended_events.count %><span></a>
+          </div>
+      </div>
+  </div>
+<%= render partial: 'events/eventsList', locals: {events: @user.attended_events} %>
+</section>
+<% end %>
+

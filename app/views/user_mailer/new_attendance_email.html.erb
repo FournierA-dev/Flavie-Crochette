@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <%if @recipient== $ADMIN%>
+
+    <h1>NOUVEL UTILISATEUR SUR UN EVENEMENT</h1>
+    <p>Evenement : <%= @attendance.attended_event.title %></p>
+    <p>Date : <%= @attendance.attended_event.start_date %></p>
+    <p>NOUVEAU INSCRIT : <%= @attendance.attendee.alias.capitalize %></p>
+    <p>Nombre inscrit total : <%= @attendance.attended_event.attendees.count %></p>
+    
+  <%else%>
+
+    <h1>Bonjour <%= @attendance.attendee.alias.capitalize %> et merci pour votre confiance!</h1>
+    <p>Tu t'es inscrit pour l'événnement <%= @attendance.attended_event.title %> de flavie-crochette.fr.</p>
+    <p>Rendez-vous le <%= @attendance.attended_event.start_date %> à <%= @attendance.attended_event.location %></p>
+    <p>
+      Pour accéder à ton espace client, connecte-toi via : <a href="<%= @url %>"><%= @url %></a>.
+    </p>
+    <p> À très vite sur flavie-crochette.fr !
+
+  <%end%>
+
+  </body>
+</html>

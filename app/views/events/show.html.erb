@@ -1,0 +1,46 @@
+
+<section id="event-detail", class="white-wrapper ">
+  <div class="section-inner pb-5">
+    <div class="container">
+        <div class="row mb60 text-center">
+            <div class="col-sm-12">
+                <h3 class="section-title"><%= @event.title%></h3>
+                <p class="section-sub-title"> Détails de l'événnement</p>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+      <div class="row post-list ">
+        <div class=" blog-caption pure-white-wrapper mx-auto position-relative col-md-8 ">
+          <h4 class="font-weight-bold"> Description </h4>
+          <p> <%= @event.description%> </p>
+          <p class="font-weight-bold"> Prix : <%= @event.price%> € </p>
+          <p class="mb-0"><small>
+          Proposé par : <a class="text-decoration-none" href="<%= user_path(@event.owner.id) %>"><%= @event.owner.first_name%> <%= @event.owner.last_name%></a> 
+            - Lieu : <%= @event.location%>
+          </small></p> 
+          <p class="mt-0 mb-0"><small>Date de démarrage : <%= @event.start_date%></small></p>
+          <p class="mt-0"><small>Durée : <%= @event.duration%> minutes</small></p> 
+          <p class="mt-0"><%= @event.attendees.count%> participant(es) : 
+            <ul>
+              <% @event.attendees.each do |attendee| %>
+                <li><a class="text-decoration-none" href="<%= user_path(attendee) %>">
+                  <%if attendee.first_name.blank? &&  attendee.last_name.blank?%>
+                  <%= attendee.email%>
+                  <%else%>
+                  <%= attendee.first_name%> <%= attendee.last_name%></a></li>
+                  <%end%>
+              <% end %>
+            </ul>
+          </p> 
+          
+          <% if @event.attendees.include?(current_user) || current_user == @event.owner %>
+            <% flash.now[:success] = "Vous participez déjà à cet événnement" %>
+          <% else %>
+            <a class="btn btn-success btn-lg mt-5" href="<%= new_charge_path %>" role="button">Participer</a>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

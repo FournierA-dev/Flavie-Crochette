@@ -1,0 +1,42 @@
+<section id="comments", class="white-wrapper ">
+    <div class="section-inner-60 ">
+        <div class="container">
+            <div class="row mb60 text-center">
+                <div class="col-sm-12">
+                    <h3 class="section-title">Vos commentaires </h3>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-sm-8 post-content mx-auto">
+                    <div id="comments-list" class="post-comments wow fadeIn" data-wow-delay="0.2s">
+                        <div class="mb30 mb50 single-section-title">
+                            <h3><%= @comments.count %> Commentaires</h3>
+                            <a href="#message" class="btn btn-primary"> Commenter </a>
+                        </div>
+                        <hr class="mb60">
+                        <% @comments.each do |comment| %>
+                            <div class="media">
+                                <div class="pull-left">
+                                    <img class="avatar comment-avatar" src="http://lorempixel.com/g/80/80/people/9" alt="avatar">
+                                </div>
+                                <div class="media-body">
+                                    <div class="well">
+                                        <div class="media-heading">
+                                            <span class="heading-font"><%= comment.user.alias %></span>
+                                        </div>
+                                        <p><%= comment.content %></p>
+                                    
+                                    </div>
+                                </div>
+                            </div>
+                        <% end %>
+                        <%= render 'comments/new' %>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

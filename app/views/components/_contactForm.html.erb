@@ -1,0 +1,29 @@
+<div class="container pure-white-wrapper py-5">
+    <div class="row vertical-center-js">
+        <div class="container">
+            <div class="row ">
+                <div class="col-sm-4">
+                    <p>Envoyez moi vos messages, vos envies, vos idéees, votre soutient.
+                        Je me ferai un plaisir de vous répondre ou de travailler à vos côté pour développer de nouvelles créations. 
+                        Tout conseil est bon à prendre et je suis là aussi pour vous aider !
+                    </p>
+                </div>
+                <div class="col-sm-7 col-sm-offset-1">
+                    <div class="row">
+                        <div id="message" class="col-sm-12"></div>
+                        <div class="col-sm-12">
+                            <form method="post" action="sendemail.php" id="contactform" class="main-contact-form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control col-md-4 mb20" name="name" placeholder="Votre nom *" id="name" required data-validation-required-message="Merci de renseigner votre nom de famille" />
+                                    <input type="text" class="form-control col-md-4 mb20" name="email" placeholder="Votre e-mail *" id="email" required data-validation-required-message="Merci de renseigner un e-mail valide" />
+                                </div>
+                                <textarea name="comments" class="form-control mb20" id="comments" placeholder="Votre message *" required data-validation-required-message="Merci de renseigner un message."></textarea>
+                                <input class="btn btn-primary mt30 pull-right" type="submit" name="submit" value="Envoyer" />
+                            </form>
+                        </div>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>

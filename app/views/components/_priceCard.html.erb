@@ -1,0 +1,13 @@
+<div class="card box-shadow col-md-4 text-center mx-auto">
+  <div class="card-header">
+    <h4 class="my-0 font-weight-normal"><%= name %></h4>
+    <p class="text-center"><%= type %></p>
+  </div>
+  <div class="card-body">
+    <h1 class="card-title pricing-card-title"><%= price %> € <small class="text-muted"> /pc</small></h1>
+    <ul class="list-unstyled mt-3 mb-4">
+      <%= render 'articleContentList', sa: sa %>
+    </ul>
+    <button type="button" class="btn btn-lg btn-block btn-outline-primary">Ajouer au panier</button>
+  </div>
+</div>

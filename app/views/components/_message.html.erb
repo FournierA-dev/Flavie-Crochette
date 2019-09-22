@@ -1,0 +1,15 @@
+<% message = yield.presence || local_assigns.fetch(:message) %>
+
+<% return if message.blank? %>
+
+<div class="alert alert-primary" role="alert">
+  <%= message %>
+</div>
+
+<!-- APpelé de la facon suivante :
+< %= render 'components/alert', message: 'Hello World!' %>
+< %= render 'components/alert' do %>
+  <h3>We can pass a block for the main content.</h3>
+  <p>This is much better for writing a more complex message.</p>
+< % end %>
+-->

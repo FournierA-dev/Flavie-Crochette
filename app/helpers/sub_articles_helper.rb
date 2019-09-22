@@ -1,0 +1,2 @@
+module SubArticlesHelper
+end

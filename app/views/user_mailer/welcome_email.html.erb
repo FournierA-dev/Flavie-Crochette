@@ -1,0 +1,22 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+  <%if @recipient== $ADMIN%>
+    <h1>NOUVEL UTILISATEUR INSCRIT</h1>
+    <p>Surnom : <%= @user.alias.capitalize %></p>
+  <%else%>
+    <h1>Bonjour <%= @user.alias.capitalize %> et bienvenue dans mon univers !</h1>
+    <p>
+      Tu t'es inscrit sur flavie-crochette.fr en utilisant l'e-mail suivant : <%= @user.email %>.
+    </p>
+    <p>
+      Pour accéder à ton espace client, connecte-toi via : <a href="<%= @url %>"><%= @url %></a>.
+    </p>
+    <p> À très vite sur flavie-crochette.fr !
+  <%end%>
+  </body>
+</html>

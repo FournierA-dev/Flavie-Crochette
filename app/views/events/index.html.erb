@@ -1,0 +1,25 @@
+<section id="events-list", class="white-wrapper ">
+  <div class="section-inner nopaddingbottom">
+    <div class="container">
+      <div class="row mb60 text-center">
+          <div class="col-sm-12">
+              <h3 class="section-title">Nos prochains événements</h3>
+              <p class="section-sub-title">pratiquer à plusieurs, c'est toujours mieux</p>
+          </div>
+      </div>
+    </div>
+    <div class="container ">
+      <div class="light-wrapper p-5">
+        <div class="row  mx-auto">
+          <% @events.each do |event| %>
+            <div class="col-sm-4  mb-3 ">
+              <%= render partial:'components/eventCard',locals:{event: event} %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<%= render 'components/bottomCaroussel' %>

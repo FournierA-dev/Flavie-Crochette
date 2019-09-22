@@ -1,0 +1,11 @@
+<%if !defined?(sa) || !sa %>
+  <li>Une poupée conféctionnée par mes soins</li>
+<%elsif sa.sub_article_type == "Modèles"%>
+  <li>Un turotiel pdf par e-mail</li>
+  <li>Un turotiel envoyé par la poste</li>
+<%elsif sa.sub_article_type == "Kits"%>
+  <li>Un turotiel pdf par e-mail</li>
+  <li>Un kit complet contenant équipements et consommables nécessaires</li>
+<%else %>
+  <li>NON RENSEIGNE</li>
+<%end %>

@@ -1,0 +1,61 @@
+<nav class=" navbar top-navigation navbar-expand-lg navbar-light bg-light nomargins navbar-fixed-top ">
+  <%= image_tag "logos/Flavie_TypoPoupee_web_N&B.png", class: "logo img-responsive",alt: "Logo", width:"30", height:"30" %></a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav active">
+        <a class="nav-link" href="<%= root_path %>">Acceuil <span class="sr-only">(current)</span></a>
+      </li>
+
+      <li class="nav dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Boutique</a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item " href="<%= static_path('dolls')  %>">Poupées</a>
+          <a class="dropdown-item" href="<%= static_path('accessories')  %>">Accessoires</a>
+          <a class="dropdown-item" href="<%= static_path('templates')  %>">Patrons</a>
+          <a class="dropdown-item" href="<%= static_path('kits')  %>">Kits</a>
+        </div>
+      </li>
+
+      <li class="nav">
+        <a class="nav-link" href="<%= articles_path %>">Portfolio</a>
+      </li>
+      <li class="nav">
+          <a class="nav-link" href="<%= events_path %>">Evenements</a>
+      </li>
+      <li class="nav">
+          <a class="nav-link" href="#">Tutoriels</a>
+      </li>
+      <li class="nav">
+        <a class="nav-link" href="#">Blog</a>
+      </li>
+      <li class="nav">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Mon espace</a>
+      </li>
+    </ul>
+    <ul class= "nav navbar-nav navbar-right ">
+      <% if !user_signed_in?%>
+        <li class="btn-group">
+          <button class="btn btn-bd-download" onclick="document.getElementById('id01').style.display='block'">Login</button>
+          <div id="id01" class="modal w-100">
+  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+          <%= render 'devise/sessions/form' %>
+          </div>
+        </li>
+      <% else%>
+        <div class="btn-group">
+          <a class="btn btn-info mr-1" href="<%= user_path(current_user) %>" role="button">Mon profil</a>
+          <%= link_to "Se déconnecter", destroy_user_session_path(), method: :delete, :class => 'btn btn-outline-dark btn-sm ml-1' %>
+        </div>
+        <% if isAdmin? %>
+          <div class="btn-group">
+            <a class="btn btn-warning mr-1" href="<%= admin_statics_path("index") %>" role="button">Administration</a>
+          </div>
+        <% end %>
+      <% end%>
+    </ul>
+  </div>
+
+</nav>

@@ -1,0 +1,16 @@
+<div class="card  ">
+  <div class="card-header row mx-auto"> 
+    <div class="col-md-12 text-center"> Commence dans : <%= distance_of_time_in_words(Time.now, event.start_date, include_seconds: true) %> </div>
+    <div class="col-md-12 text-center">participants
+      <span class="badge badge-primary badge-pill pe-7s-users"> <%=event.attendees.count %>  </span> 
+    </div>
+  </div>
+  <div class="card-body">
+    <h5 class="card-title"> <%=event.title %></h5>
+    <p class="card-text"><small>
+    Créé par : <a class="text-decoration-none" href="<%= user_path(event.owner.id) %>"><%= event.owner.first_name%> <%= event.owner.last_name%> </a>
+      - Lieu : <%= event.location %>
+    </small></p> 
+    <a href="<%= event_path(event.id) %>" class="btn btn-primary">Voir</a>
+  </div>
+</div>
