@@ -101,9 +101,11 @@ input[disabled="disabled"] {
     right: 40px;
 }
 
+
 .background-cover {
     background-size: cover;
     background-position: center;
+    width: 100%;
 }
 
 .smoothie {
@@ -168,3 +170,68 @@ input[disabled="disabled"] {
 }
 
 
+/*-----------------------------------------------------------------------------------*/
+/*  FEATURE BOXES
+/*-----------------------------------------------------------------------------------*/
+.feature-box {
+    padding: 80px 40px;
+    color: #fff;
+}
+
+.feature-box.alt-style {
+    padding: 0px 15px;
+    color: #222;
+}
+
+.feature-box.alt-style * {
+    color: #222;
+}
+
+.feature-box.alt-style i a {
+    right: 30px;
+}
+
+.feature-box.alt-style i {
+    border-bottom: 3px solid #222;
+}
+
+.feature-box i {
+    width: 65px;
+    border-bottom: 3px solid #fff;
+    padding-bottom: 15px;
+}
+
+.feature-box.alt-style:hover i a {
+    opacity: 1;
+    display: inline;
+    right: 15px;
+}
+
+.feature-box .content-area {
+    padding-top: 50px;
+}
+
+.feature-box i a {
+    opacity: 0;
+    display: none;
+    right: 60px;
+    display: inline;
+    position: absolute;
+    color: #fff;
+    font-family: 'Work Sans';
+    font-size: 20px;
+    text-transform: uppercase;
+    line-height: 80px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.feature-box:hover i a {
+    opacity: 1;
+    display: inline;
+    right: 45px;
+}
+
+.feature-box:hover i {
+    width: 100%;
+}

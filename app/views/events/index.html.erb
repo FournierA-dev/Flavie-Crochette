@@ -1,13 +1,7 @@
 <section id="events-list", class="white-wrapper ">
-  <div class="section-inner nopaddingbottom">
-    <div class="container">
-      <div class="row mb60 text-center">
-          <div class="col-sm-12">
-              <h3 class="section-title">Nos prochains événements</h3>
-              <p class="section-sub-title">pratiquer à plusieurs, c'est toujours mieux</p>
-          </div>
-      </div>
-    </div>
+
+  <%= render partial: 'components/titlePage',locals: {title:'Nos prochains événements',image:'logos/2.jpg'}%>
+
     <div class="container ">
       <div class="light-wrapper p-5">
         <div class="row  mx-auto">
@@ -19,7 +13,7 @@
         </div>
       </div>
     </div>
-  </div>
+
 </section>
 
 <%= render 'components/bottomCaroussel' %>

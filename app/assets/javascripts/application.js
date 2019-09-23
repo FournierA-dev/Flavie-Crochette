@@ -28,3 +28,4 @@
 //-----------------------------------TEMPLATE SPECIFIC
 //= require slick-custom
 //= require main
+//= require benedict
