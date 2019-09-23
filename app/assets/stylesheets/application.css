@@ -18,7 +18,7 @@
  *-----------------------------------BOOTSTRAP
  *= require css/bootstrap.min
  *-----------------------------------FONTS
- *= require font-awesome-4.7.0/css/font-awesome.min
+ *= require font-awesome-4.7.0/css/font-awesome
  *= require themify/themify-icons
  *= require Linearicons-Free-v1.0.0/icon-font.min
  *= require elegant-font/html-css/style
