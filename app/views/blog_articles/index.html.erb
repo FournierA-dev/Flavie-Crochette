@@ -1,0 +1,28 @@
+<!-- Title Page -->
+<%= render partial: 'components/titlePage',locals: {title:'Blog'}%>
+
+<!-- content page -->
+<section class="bgwhite p-t-60">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8 col-lg-9 p-b-75">
+        <div class="p-r-50 p-r-0-lg">
+          <% 5.times do %>
+            <%= render 'itemblog' %>
+          <% end %>
+        </div>
+        <!-- Pagination -->
+        <div class="pagination flex-m flex-w p-r-50">
+          <a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
+          <a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
+        </div>
+      </div>
+
+      <div class="col-md-4 col-lg-3 p-b-75">
+        <%= render 'rightbar' %>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+	<!-- Title Page -->
+	<%= render partial: 'components/titlePage',locals: {title:'Contact'}%>
+
+	<!-- content page -->
+	<section class="bgwhite p-t-66 p-b-60">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4 p-b-30">
+					<div class="p-r-20 p-r-0-lg hov-img-zoom">
+						<img src="<%=image_path 'contact.png'%>" alt="IMG-ABOUT">
+					</div>
+				</div>
+
+				<div class="col-md-8 p-b-30">
+					<form class="leave-comment">
+						<h4 class="m-text26 p-t-0 p-b-20">
+							Envoyez moi un message
+						</h4>
+						<p class= "p-b-20"> Envoyez-moi vos messages, vos envies, vos idéees, votre soutient. </br>
+                Je me ferai un plaisir de vous répondre ou de travailler à vos côté pour développer de nouvelles créations.  </br>
+                Tout conseil est bon à prendre et je suis là aussi pour vous aider !	</p>
+
+						<div class="bo4 of-hidden size15 m-b-20">
+							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="name" placeholder="Nom / Prénom">
+						</div>
+
+						<div class="bo4 of-hidden size15 m-b-20">
+							<input class="sizefull s-text7 p-l-22 p-r-22" type="text" name="email" placeholder="Adresse e-mail">
+						</div>
+
+						<textarea class="dis-block s-text7 size20 bo4 p-l-22 p-r-22 p-t-13 m-b-20" name="message" placeholder="Message"></textarea>
+
+						<div class="w-size25">
+							<!-- Button -->
+							<button class="flex-c-m size2 bg1 bo-rad-23 hov1 m-text3 trans-0-4">
+								Envoyer
+							</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>

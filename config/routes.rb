@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  
+
   root "statics#show", page: "index"
 
   devise_for :user
@@ -22,6 +22,10 @@ Rails.application.routes.draw do
     resources :comments, except: [ :show]
   end
 
+  resources :blog_articles, only: [:index, :show] do
+    resources :comments, except: [ :show]
+  end
+
   namespace :admin do
     resources :articles
     resources :comments
@@ -29,6 +33,7 @@ Rails.application.routes.draw do
     resources :sub_articles
     resources :tutotials
     resources :users
+    resources :blog_articles
     resources :statics, only: [:index]
   end
 

@@ -12,6 +12,19 @@
 //
 //= require rails-ujs
 //= require activestorage
-//= require jquery3
-//= require jquery_ujs
 
+//-----------------------------------BOOTSTRAP
+//= require jquery-3.2.1.min
+//= require js/animsition.min
+//= require js/popper
+//= require js/bootstrap.min
+//----------------------------------- OTHERS VENDORS
+//= require select2.min
+//= require slick.min
+//= require countdowntime
+//= require js/lightbox.min
+//= require sweetalert.min
+//= require parallax100
+//-----------------------------------TEMPLATE SPECIFIC
+//= require slick-custom
+//= require main

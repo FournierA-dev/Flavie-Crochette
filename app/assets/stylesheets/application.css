@@ -12,11 +12,38 @@
  *
 
 
- *= require_self
- *= require font-awesome
 
+ * require_tree
+ 
+ *-----------------------------------BOOTSTRAP
+ *= require css/bootstrap.min
+ *-----------------------------------FONTS
+ *= require font-awesome-4.7.0/css/font-awesome.min
+ *= require themify/themify-icons
+ *= require Linearicons-Free-v1.0.0/icon-font.min
+ *= require elegant-font/html-css/style
+ *-----------------------------------OTHERS VENDORS
+ *= require animate
+ *= require hamburgers.min
+ *= require css/animsition.min
+ *= require select2.min
+ *= require daterangepicker
+ *= require slick
+ *= require css/lightbox.min
+ *-----------------------------------TEMPLATE SPECIFIC
+ *= require util
+ *= require main
+ *-----------------------------------PERSONNAL
+
+  *= require_self
 
  */
 
 
+.item-blog-img {
+  max-height: 300px;
+}
 
+input[disabled="disabled"] {
+    cursor: not-allowed;
+}

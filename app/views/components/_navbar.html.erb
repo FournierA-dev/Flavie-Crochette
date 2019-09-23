@@ -1,61 +1,94 @@
-<nav class=" navbar top-navigation navbar-expand-lg navbar-light bg-light nomargins navbar-fixed-top ">
-  <%= image_tag "logos/Flavie_TypoPoupee_web_N&B.png", class: "logo img-responsive",alt: "Logo", width:"30", height:"30" %></a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav active">
-        <a class="nav-link" href="<%= root_path %>">Acceuil <span class="sr-only">(current)</span></a>
-      </li>
+	<!-- Header -->
+	<header class="header">
+		<!-- Header desktop -->
+		<div class="container-menu-header">
+			<div class="topbar">
+				<div class="topbar-social">
+					<a href="#" class="topbar-social-item fa fa-facebook"></a>
+					<a href="#" class="topbar-social-item fa fa-instagram"></a>
+					<a href="#" class="topbar-social-item fa fa-youtube-play"></a>
+				</div>
 
-      <li class="nav dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Boutique</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item " href="<%= static_path('dolls')  %>">Poupées</a>
-          <a class="dropdown-item" href="<%= static_path('accessories')  %>">Accessoires</a>
-          <a class="dropdown-item" href="<%= static_path('templates')  %>">Patrons</a>
-          <a class="dropdown-item" href="<%= static_path('kits')  %>">Kits</a>
-        </div>
-      </li>
+        <span class="topbar-child1">
+				  L'univers du crochet et bien plus encore !
+				</span>
+      </div>
 
-      <li class="nav">
-        <a class="nav-link" href="<%= articles_path %>">Portfolio</a>
-      </li>
-      <li class="nav">
-          <a class="nav-link" href="<%= events_path %>">Evenements</a>
-      </li>
-      <li class="nav">
-          <a class="nav-link" href="#">Tutoriels</a>
-      </li>
-      <li class="nav">
-        <a class="nav-link" href="#">Blog</a>
-      </li>
-      <li class="nav">
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Mon espace</a>
-      </li>
-    </ul>
-    <ul class= "nav navbar-nav navbar-right ">
-      <% if !user_signed_in?%>
-        <li class="btn-group">
-          <button class="btn btn-bd-download" onclick="document.getElementById('id01').style.display='block'">Login</button>
-          <div id="id01" class="modal w-100">
-  <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <%= render 'devise/sessions/form' %>
+			<div class="wrap_header">
+
+				<a href="<%= root_path %>" class="logo">
+        <%= image_tag "logos/2.jpg",alt: "IMG-LOGO", size: "100%" %>
+				</a>
+
+				<!-- Menu -->
+				<div class="wrap_menu">
+					<nav class="menu">
+						<ul class="main_menu">
+							<li>
+								<a href="<%= root_path %>">Acceuil</a>
+							</li>
+
+							<li>
+								<a href="#">Mes articles</a>
+                  <ul class="sub_menu">
+                    <li><a href="<%= static_path('dolls') %>">Poupées</a></li>
+                    <li><a href="<%= static_path('accessories') %>">Accessoires</a></li>
+                    <li><a href="<%= static_path('templates') %>">Patrons</a></li>
+                    <li><a href="<%= static_path('kits') %>">Kits</a></li>
+                  </ul>
+							</li>
+
+							<li class="sale-noti">
+								<a href="<%= articles_path %>">Boutique</a>
+							</li>
+
+							<li>
+								<a href="<%= events_path %>">Evenements</a>
+							</li>
+
+							<li>
+								<a href="#">Tutoriels</a>
+							</li>
+
+							<li>
+								<a href="<%= blog_articles_path %>">Blog</a>
+							</li>
+
+							<li>
+								<a href="<%= static_path('contact') %>">Contact</a>
+							</li>
+						</ul>
+					</nav>
+				</div>
+
+				<!-- Header Icon -->
+				<div class="header-icons">
+          <div class="dropdown show">
+            <a href="#" class="header-wrapicon1 dis-block m-l-30 dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              <%= image_tag "icons/icon-header-01.png", class: "header-icon1",alt: "ICON" %>
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink ">
+              <% if signed_in? %>
+                <% if isAdmin? %>
+                  <%= link_to "ADMIN", admin_statics_path("index"), :class => 'dropdown-item btn btn-warning' %>
+                <% end %>
+                <%= link_to "Mes données", user_path(current_user), :class => 'dropdown-item' %>
+                <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete, :class => 'dropdown-item' %>
+
+              <%else%>
+                <%= link_to "Se connecter", new_user_session_path, :class => 'dropdown-item' %>
+                <%= link_to "S'inscrire", new_user_registration_path, :class => 'dropdown-item' %>
+              <%end%>
+            </div>
           </div>
-        </li>
-      <% else%>
-        <div class="btn-group">
-          <a class="btn btn-info mr-1" href="<%= user_path(current_user) %>" role="button">Mon profil</a>
-          <%= link_to "Se déconnecter", destroy_user_session_path(), method: :delete, :class => 'btn btn-outline-dark btn-sm ml-1' %>
-        </div>
-        <% if isAdmin? %>
-          <div class="btn-group">
-            <a class="btn btn-warning mr-1" href="<%= admin_statics_path("index") %>" role="button">Administration</a>
+          <span class="linedivide1"></span>
+          <div class="header-wrapicon2 m-r-13">
+            <%= image_tag "icons/icon-header-02.png", class: "header-icon1 js-show-header-dropdown",alt: "ICON" %>
+            <span class="header-icons-noti">0</span>
+            <%= render "components/headerCartDropdown"%>
           </div>
-        <% end %>
-      <% end%>
-    </ul>
-  </div>
+				</div>
 
-</nav>
+			</div>
+		</div>
+	</header>

@@ -1,34 +1,33 @@
-<div id="comments-form" class="row wow fadeIn white-wrapper pb-5" data-wow-delay="0.2s">
-    <div class="col-md-12">
-        <hr>
-        <div class="mb60 single-section-title">
-            <h3>Donner moi votre avis !</h3>
-        <hr class="mb60">
-        </div>
+<!-- Leave a comment -->
+<%=  form_for [@commentable,@comment], html: { class: "leave-comment"} do |f| %>
 
-        <% if @comment.errors.any? %>
-        <div class="alert alert-danger" role="alert">
-            <p><small>Nous n'avons pas réussi à créer votre commentaire pour la (ou les) raison(s) suivante(s) :</small></p>
-            <ul><small>
-            <% @comment.errors.full_messages.each do |message| %>
-                <li><%= message %></li>
-            <% end %>
-            </small></ul>
-        </div>
-        <% end %>
+    <h4 class="m-text25 p-b-14">
+        Publiez votre commentaire !
+    </h4>
 
-
-        <div id="message"></div>
-
-            <%=  form_for [@commentable,@comment], html: { class: "comment-form", id: "commentform" } do |f| %>
-                <div class="form-group">
-                    <%= f.label :content, "Commentaire" %><br />
-                    <%= f.text_field :content, autofocus: true, autocomplete: "content", class: "form-control" %>
-                </div>
-                <div class="actions">
-                    <%= f.submit "Envoyer", class: "btn btn-lg btn-primary btn-block" %>
+            <% if @comment.errors.any? %>
+                <div class="alert alert-danger" role="alert">
+                    <p><small>Nous n'avons pas réussi à créer votre commentaire pour la (ou les) raison(s) suivante(s) :</small></p>
+                    <ul><small>
+                    <% @comment.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                    </small></ul>
                 </div>
             <% end %>
 
-    </div>
-</div>
+    <%disable = false %>
+    <%disable = true if !user_signed_in? %>
+    <%=  form_for [@commentable,@comment], html: { class: "comment-form", id: "commentform" } do |f| %>
+        <%= f.text_field :content, autofocus: false, autocomplete: "content", class: "dis-block s-text7 size18 bo12 p-l-18 p-r-18 p-t-13 m-b-20 border", placeholder: "Commentaire ..." %>
+        <div class="w-size24">
+            <%= f.submit "Poster",disabled: disable , class: "flex-c-m size1 bg1 bo-rad-20 hov1 s-text1 trans-0-4" %>
+        </div>
+        <% if disable %>
+            <p class="s-text8 p-b-40 text-danger">
+                Pour laisser un commentaire, vous devez être authentifié.
+            </p>
+        <%end%>
+    <% end %>
+
+<% end %>

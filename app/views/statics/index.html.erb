@@ -1,65 +1,7 @@
 <%= render 'components/jumbotron' %>
+<%= render 'IndexMyActivities' %>
+<%= render 'about' %>
 
-<section id="activities" class="pure-white-wrapper ">
-    <div class="section-inner nopaddingbottom">
-        <div class="container">
-            <div class="row mb60 text-center">
-                <div class="col-sm-12">
-                    <h3 class="section-title">Mes activités</h3>
-                    <p class="section-sub-title">des compétences à partager</p>
-                </div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="owl-carousel owl-theme" data-items="4">
-
-                    <%= render partial: 'components/owlItem', locals: {
-                        image_path: "mes_activites/IMG_20181022_164025_861.jpg",
-                        title: "Vente de poupées",
-                        short_description: "par plaisir d'offrir ou pour soi",
-                        link:  static_path('dolls')
-                    } %>
-                    <%= render partial: 'components/owlItem', locals: {
-                        image_path: "mes_activites/20180906_141235.jpg",
-                        title: "Vente d'accessoires",
-                        short_description: "par plaisir d'offrir ou pour soi",
-                        link:  static_path('accessories')
-                    } %>
-
-                    <%= render partial: 'components/owlItem', locals: {
-                        image_path: "mes_activites/Présentation E-BOOK BRIDGETTE-1.png",
-                        title: "Vente de patrons",
-                        short_description: "pour développer ses compétences",
-                        link: static_path('templates')
-                    } %>
-
-                    <%= render partial: 'components/owlItem', locals: {
-                        image_path: "mes_activites/IMG_20171015_145133_131.jpg",
-                        title: "Vente de kits",
-                        short_description: "pour démarrer sans contraintes",
-                        link: static_path('kits')
-                    } %>
-
-                    <%= render partial: 'components/owlItem', locals: {
-                        image_path: "mes_activites/daniel-cheung-ZqqlOZyGG7g-unsplash.jpg",
-                        title: "Cours",
-                        short_description: "pour apprendre à mes côtés",
-                        link: static_path('courses')
-                    } %>
-
-                    <%= render partial: 'components/owlItem', locals: {
-                        image_path: "mes_activites/rebecca-grant-cqIygVsfrgM-unsplash.jpg",
-                        title: "Tutoriels vidéo",
-                        short_description: "pour apprendre à son rythme",
-                        link: "#"
-                    } %>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
 <section id="featured-news" class="white-wrapper ">
     <div class="section-inner nopaddingbottom">
@@ -105,79 +47,9 @@
 </section>
 
 
-<section id="our-staff" class="dark-wrapper">
-    <div class="section-inner nopaddingbottom">
-        <div class="container">
-            <div class="row mb60 text-center">
-                <div class="col-sm-12">
-                    <h3 class="section-title">A propos</h3>
-                    <p class="section-sub-title">derrière chaque crochet se cache une fée</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="hover-shift smoothie match-height parallax" data-parallax="scroll" data-image-src=" <%= asset_path("portrait.jpg") %>" data-speed="0.8" data-mh="page-splitter">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-md-offset-6 dark-overlay fill-right smoothie">
-                <div class="section-inner">
-                    <div class="row">
-                        <div class="col-md-offset-1 col-md-10">
-                            <h3>Flavie collette</h3>
-                            <h5 class="mb40">Créatrice passionnée</h5>
-                            <p>Passionnée de travaux d'aiguilles, je crochète quotidiennement depuis des années, professionnellement depuis peu. Ayant une longue expérience dans l'enseignement individuel et en groupe, j'anime également des stages d'initiation et/ou de perfectionnement aux techniques du crochet.
-                            Curieuse et dynamique, j'ai transformé cette passion en une profession depuis que la création de FlavieCrochette, une marque qui propose des patrons de petites poupées modernes et originales. </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xs-1 member-social smoothie">
-                <div class="section-inner">
-                    <a href="<%= $facebook_link %>"><i class="fa fa-facebook"></i></a>
-                    <a href="#"><i class="fa fa-twitter"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section id="contact" class="white-wrapper ">
-    <div class="section-inner nopaddingbottom">
-        <div class="container">
-            <div class="row mb60 text-center">
-                <div class="col-sm-12">
-                    <h3 class="section-title">Gardons le contact !</h3>
-                    <p class="section-sub-title">Le crochet c'est une communauté</p>
-                </div>
-            </div>
-        </div>
-        <%= render 'components/contactForm'%>
-    </div>
-</section>
 
 
-<section class="dark-wrapper">
-    <div class="section-inner">
-        <div class="container">
-                <div class="row mb60 text-center">
-                <div class="col-sm-12">
-                    <h3 class="section-title">Mes partenaires</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-10 col-sm-offset-1">
-                    <div class="row">
-                        <div class="col-md-3"><%= image_tag "clients/logo1.png", class: "img-responsive smoothie" %></div>
-                        <div class="col-md-3"><%= image_tag "clients/logo2.png", class: "img-responsive smoothie" %></div>
-                        <div class="col-md-3"><%= image_tag "clients/logo3.png", class: "img-responsive smoothie" %></div>
-                        <div class="col-md-3"><%= image_tag "clients/logo4.png", class: "img-responsive smoothie" %></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
+
 
 
 

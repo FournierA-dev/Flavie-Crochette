@@ -1,0 +1,59 @@
+<!-- New Product -->
+<section class="newproduct bgwhite p-t-45 p-b-105">
+  <div class="container">
+    <div class="sec-title p-b-60">
+      <h3 class="m-text5 t-center">
+        Mes activitées
+      </h3>
+    </div>
+
+    <!-- Slide2 -->
+    <div class="wrap-slick2">
+      <div class="slick2">
+
+        <%= render partial: 'components/itemSlick2', locals: {
+            img_path: "mes_activites/A1.jpg",
+            title: "Vente de poupées",
+            short_description: "par plaisir d'offrir ou pour soi",
+            link:  static_path('dolls')
+        } %>
+        <%= render partial: 'components/itemSlick2', locals: {
+            img_path: "mes_activites/A2.jpg",
+            title: "Vente d'accessoires",
+            short_description: "par plaisir d'offrir ou pour soi",
+            link:  static_path('accessories')
+        } %>
+
+        <%= render partial: 'components/itemSlick2', locals: {
+            img_path: "mes_activites/A3.png",
+            title: "Vente de patrons",
+            short_description: "pour développer ses compétences",
+            link: static_path('templates')
+        } %>
+
+        <%= render partial: 'components/itemSlick2', locals: {
+            img_path: "mes_activites/A4.jpg",
+            title: "Vente de kits",
+            short_description: "pour démarrer sans contraintes",
+            link: static_path('kits')
+        } %>
+
+        <%= render partial: 'components/itemSlick2', locals: {
+            img_path: "mes_activites/A5.jpg",
+            title: "Cours",
+            short_description: "pour apprendre à mes côtés",
+            link: static_path('courses')
+        } %>
+
+        <%= render partial: 'components/itemSlick2', locals: {
+            img_path: "mes_activites/A6.jpg",
+            title: "Tutoriels vidéo",
+            short_description: "pour apprendre à son rythme",
+            link: "#"
+        } %>
+
+      </div>
+    </div>
+
+  </div>
+</section>
