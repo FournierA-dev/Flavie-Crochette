@@ -1,0 +1,36 @@
+<section class="newproduct bgwhite  p-t-45 p-b-45">
+  <div class="container">
+    <div class="sec-title p-b-60">
+      <h3 class="m-text5 t-center">
+        Mes dernières créations
+      </h3>
+    </div>
+
+    <div class="row">
+      <% @last_articles.each_with_index do |article,index| %>
+          <% if index == 0 %>
+              <div class="col-sm-6">
+          <% elsif index == @last_articles.count/2.0  %>
+              </div>
+              <div class="col-sm-6">
+          <% end %>
+          <% if index < @last_articles.count/2.0%>
+              <% index%2 == 0 ? tile_type = "tile" : tile_type = "tile-alt" %>
+          <%else%>
+              <% index%2 != 0 ? tile_type = "tile" : tile_type = "tile-alt" %>
+          <%end%>
+          
+              <%= render partial: 'components/postTile', locals: {
+                  tile_type: tile_type,
+                  img_path: "nvl_rea/IMG_20181015_174605_594.jpg",
+                  link: article,
+                  title: article.name,
+                  short_description: article.short_description
+              }%>
+          <% if index == @last_articles.count-1%>
+              </div>
+          <%end%>
+      <%end%>
+    </div>
+  </div>
+</section>

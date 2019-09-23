@@ -47,3 +47,124 @@
 input[disabled="disabled"] {
     cursor: not-allowed;
 }
+
+/*-----------------------------------------------------------------------------------*/
+/*                                                  COPIE BENEDICT
+/*-----------------------------------------------------------------------------------*/
+
+@media (max-width: 768px) {
+    .post-tile-alt .blog-caption {
+        float: right;
+        text-align: left;
+    }
+    .post-tile-alt .blog-caption .text-right {
+        text-align: left !important;
+    }
+    .post-tile-alt h4:after {
+        left: 40px !important;
+        right: auto;
+    }
+}
+.post-list .blog-caption {
+    padding: 60px 40px;
+}
+
+
+.hover-overlay h4, .post-tile h4, .post-tile-alt h4  {
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 4px;
+}
+
+.hover-overlay h4:after, .post-tile h4:after, .post-tile-alt h4:after, .post-list .blog-caption h4:after {
+    content: '';
+    background-color: #fff;
+    height: 2px;
+    width: calc(100% - 40%);
+    position: absolute;
+    left: 40px;
+    margin-top: 40px;
+    padding: 0 40px;
+}
+
+.post-tile > div,.post-tile-alt > div {
+    padding: 0px 40px;
+    min-height: 380px;
+}
+
+.post-tile h4:after, .post-tile-alt h4:after, .post-list .blog-caption h4:after {
+    background-color: #222;
+}
+
+.post-tile-alt h4:after {
+    left: auto;
+    right: 40px;
+}
+
+.background-cover {
+    background-size: cover;
+    background-position: center;
+}
+
+.smoothie {
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+}
+
+.dark-overlay {
+    background-color: rgba(0,0,0,0.6);
+}
+
+
+
+/*-----------------------------------------------------------------------------------*/
+/* HOVER EFFECT
+/*-----------------------------------------------------------------------------------*/
+.hover-effect {
+    position: relative;
+    overflow: hidden;
+}
+
+.hover-effect .img-responsive {
+    width: 100%;
+}
+
+.hover-effect .hover-caption, .hover-effect .hover-overlay {
+    position: absolute;
+    width: calc(100%);
+    height: calc(100%);
+    top: 0px;
+    left: 0px;
+    opacity: 0;
+    padding: 0 40px;
+    text-align: left;
+}
+
+.hover-effect .hover-caption {
+    left: 60px;
+}
+
+.hover-effect:hover .hover-caption {
+    opacity: 1;
+    z-index: 5;
+    width: calc(100%);
+    height: calc(100%);
+    top: 0px;
+    left: 0px;
+}
+
+.hover-effect .hover-overlay {
+    background-color: rgba(0,0,0,0.2);
+    opacity: 1;    
+    color: #fff;
+}
+
+.hover-effect:hover .hover-overlay {
+    opacity: 0;
+    left: -60px;
+}
+
+

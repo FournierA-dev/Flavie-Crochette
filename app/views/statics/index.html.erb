@@ -1,50 +1,13 @@
 <%= render 'components/jumbotron' %>
 <%= render 'IndexMyActivities' %>
+<%= render 'IndexMyArticles' %>
+<%= render 'IndexMyBlog' %>
 <%= render 'about' %>
 
 
-<section id="featured-news" class="white-wrapper ">
-    <div class="section-inner nopaddingbottom">
-        <div class="container">
-            <div class="row mb60 text-center">
-                <div class="col-sm-12">
-                    <h3 class="section-title">Mes nouvelles réalisations</h3>
-                    <p class="section-sub-title">de l'idée au crochet</p>
-                </div>
-            </div>
-        </div>
-        <div class="container ">
-            <div class="row ">       
 
-            <% @last_articles.each_with_index do |article,index| %>
-                <% if index == 0 %>
-                    <div class="col-sm-6">
-                <% elsif index == @last_articles.count/2.0  %>
-                    </div>
-                    <div class="col-sm-6">
-                <% end %>
-                <% if index < @last_articles.count/2.0%>
-                    <% index%2 == 0 ? tile_type = "tile" : tile_type = "tile-alt" %>
-                <%else%>
-                    <% index%2 != 0 ? tile_type = "tile" : tile_type = "tile-alt" %>
-                <%end%>
-                
-                    <%= render partial: 'components/postTile', locals: {
-                        tile_type: tile_type,
-                        img_path: "nvl_rea/IMG_20181015_174605_594.jpg",
-                        link: article,
-                        title: article.name,
-                        short_description: article.short_description
-                    }%>
-                <% if index == @last_articles.count-1%>
-                    </div>
-                <%end%>
-            <%end%>
-            
-            </div>
-        </div>
-    </div>
-</section>
+
+
 
 
 
