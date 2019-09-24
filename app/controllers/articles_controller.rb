@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
 
   def index
     @articles = Article.includes(:sub_articles,:comments).order(creation_date: :desc)
-    @article_types= ["Poupée tissu","Poupée crocher","Accessoire enfant","Accessoire adulte"]
+    @article_types= $article_types
   end
 
 

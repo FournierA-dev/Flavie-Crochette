@@ -1,70 +1,27 @@
+<%= render partial: 'components/titlePage',locals: {title:'Boutique',image:'logos/2.jpg'}%>
 
-<section id="articles-list", class="white-wrapper ">
-  <div class="section-inner pb-5">
-    <div class="container">
-        <div class="row mb60 text-center">
-            <div class="col-sm-12">
-                <h3 class="section-title">Les réalisations Flavie Crochette</h3>
-                <p class="section-sub-title"> Quand le crochet insufle mon inspiration</p>
-            </div>
+<!-- Content page -->
+<section class="bgwhite p-t-55 p-b-65">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 col-md-4 col-lg-3 p-b-50">
+        <!-- Filters -->
+        <%= render 'leftFilters' %>
+      </div>
+      <div class="col-sm-6 col-md-8 col-lg-9 p-b-50">
+        <!-- Sorting -->
+        <%= render 'topSorting' %>
+        <!-- Products -->
+        <div class="row">
+          <%= render partial: 'articleMasonry', locals:{articles: @articles, article_types: @article_types} %>
         </div>
-    </div>
-    <div class="container">
-      <div class="light-wrapper p-5">
-        <div class="container-fluid ">
-          <div class="row ">
-            <div class="col-sm-12">
-              <div class="row ">
-                <div class="col-12 ">
-
-                  <div class="masonry-portfolio row">
-
-                    <ul class="masonry-portfolio-filter mb40 list-inline wow fadeIn  " data-wow-delay="0.2s" >
-                        <li class="list-inline-item mx-auto"><a class="btn btn-primary btn-transparent active  " href="#" data-filter="*">Tous</a></li>
-                        <% @article_types.each do |at| %>
-                          <li class="list-inline-item my-1 mx-auto"><a class="btn btn-primary btn-transparent" href="#" data-filter="<%="."+ at.downcase.tr("àâçèéêîôùû","aaceeeiouu").sub!(" ","-")%>"><%= at %></a></li>
-                        <% end %>
-                    </ul>
-
-                    <div class="col-sm-12">
-                      <div class="masonry-portfolio-items ">
-                        <div class="row">
-                        
-                          <% @articles.each do |article| %>
-                            <div class="col-sm-4 masonry-portfolio-item
-                            <%= article.article_type.downcase.tr("àâçèéêîôùû","aaceeeiouu").sub!(" ","-") %>" >
-                                <div class="hover-effect smoothie">
-                                    <a href="#" class="smoothie">
-                                    <%= image_tag "IMG_20180915_161804_914.jpg", class: "img-responsive smoothie",alt: "Image manquante" %></a>
-                                    <div class="hover-overlay smoothie text-center">
-                                        <div class="vertical-center-js">
-                                            <h4><%= article.name %></h4>
-                                        </div>
-                                    </div>
-                                    <div class="hover-caption dark-overlay smoothie text-center">
-                                        <div class="vertical-center-js">
-                                            <a href="<%= article_path(article) %>" class="btn btn-primary btn-green">Voir</a>
-                                            <a href="<%= image_path("IMG_20180915_161804_914.jpg") %>" class="lb-link btn btn-primary btn-white">Zoom</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                          <% end %>
-
-                        </div>
-                      </div>
-                    </div>
-
-                  </div>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
+        <!-- Pagination -->
+        <div class="pagination flex-m flex-w p-t-26">
+          <a href="#" class="item-pagination flex-c-m trans-0-4 active-pagination">1</a>
+          <a href="#" class="item-pagination flex-c-m trans-0-4">2</a>
         </div>
+
       </div>
     </div>
   </div>
 </section>
-
-<%= render 'components/bottomCaroussel' %>

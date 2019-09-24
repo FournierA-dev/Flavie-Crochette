@@ -15,10 +15,10 @@
 <% elsif tile_type == "tile-alt"%>
 <div class="row post-tile post-tile-alt block2">                                
   <div class="col-lg-6 col-md-8 col-sm-8 col-9 blog-caption match-height">
-      <div class="vertical-center-js text-right">
-          <h4 class="m-b-60"><%= title %></h4>
-          <p class="m-b-20"><small><%= short_description %></small></p>
-          <p class= "row justify-content-end mr-1"><a href="<%= article_path(link) %>" class="flex-c-m size7 bg4 bo-rad-23 hov1 s-text1 trans-0-4 ">Voir</a></p>
+    <div class="vertical-center-js">
+        <h4 class="m-b-60"><%= title %></h4>
+        <p class="m-b-20"><small><%= short_description %></small></p>
+        <p class= "row justify-content-end mr-1"><a href="<%= article_path(link) %>" class="flex-c-m size7 bg4 bo-rad-23 hov1 s-text1 trans-0-4 ">Voir</a></p>
       </div>
   </div>
   <div class="col-lg-6 col-md-4 col-sm-4 col-3 px-0 match-height background-cover block2-img" style="background-image: url(<%= asset_path(img_path) %>)">

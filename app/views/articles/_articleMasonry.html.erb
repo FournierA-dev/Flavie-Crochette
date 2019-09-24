@@ -1,0 +1,41 @@
+<% articles.each do |article| %>
+  <div class="col-sm-12 col-md-6 col-lg-4 p-b-50
+  <%= article.article_type.downcase.tr("àâçèéêîôùû","aaceeeiouu").sub!(" ","-") %>" >
+      <div class="hover-effect smoothie">
+          <a href="#" class="smoothie">
+          <%= image_tag "IMG_20180915_161804_914.jpg", class: "img-responsive smoothie",alt: "IMG-PRODUCT" %></a>
+          <div class="hover-overlay smoothie text-center">
+              <div class="vertical-center-js block2-labelnew ">
+                  <h4><%= article.name %></h4>
+              </div>
+              <div class="p-t-50">
+                <% case article.article_type.downcase.tr("àâçèéêîôùû","aaceeeiouu").sub!(" ","-") %>
+                  <%when "poupee-tissu" %>
+                    <span class="badge badge-pill badge-tissu px-1">tissu</span>
+                  <%when "poupee-crocher" %>
+                    <span class="badge badge-pill badge-crochet px-1">crochet</span>
+                  <%else%>
+                    <span class="badge badge-pill badge-accessoire px-1">accessoire</span>
+                <%end%>
+              </div>
+              <div class="">
+                <%article.sub_articles.each do |sa|%>
+                  <%case sa.sub_article_type %>
+                    <%when "kit"%>
+                      <span class="badge badge-pill badge-kit px-1">kit</span>
+                    <%when "patron"%>
+                      <span class="badge badge-pill badge-patron px-1">patron</span>
+                  <%end%>
+                <%end%>
+              </div>
+          </div>
+          <div class="hover-caption dark-overlay smoothie text-center myblock2-overlay">
+
+              <div class="vertical-center-js">
+                  <a href="<%= article_path(article) %>" class="btn btn-primary btn-green">Voir</a>
+                  <a href="<%= image_path("IMG_20180915_161804_914.jpg") %>" class="lb-link btn btn-primary btn-white">Zoom</a>
+              </div>
+          </div>
+      </div>
+  </div>
+<% end %>

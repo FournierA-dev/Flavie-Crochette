@@ -96,7 +96,7 @@ puts "Tutorials seed Ok"
 20.times do
   a = Article.create!(
     name: Faker::Creature::Animal.unique.name,
-    article_type: ["Poupée tissu","Poupée crocher","Accessoire enfant","Accessoire adulte"].sample,
+    article_type: $article_types.sample,
     short_description: Faker::Quote.famous_last_words,
     description: Faker::Lorem.paragraph(sentence_count: rand(5..10)),
     creation_date: Faker::Time.between(from: Date.today-365, to: Date.today),
@@ -114,9 +114,9 @@ puts "Article seed Ok"
 
 #Populate SubArticle DB
 Article.all.each do |article|
-  article.sub_articles.create!(creation_date: Faker::Time.between(from: article.creation_date, to: Date.today), price: rand(5.0..7.0), sub_article_type: "Modèles") if [true,false].sample
+  article.sub_articles.create!(creation_date: Faker::Time.between(from: article.creation_date, to: Date.today), price: rand(5.0..7.0), sub_article_type: "patron") if [true,false].sample
 
-  article.sub_articles.create!(creation_date: Faker::Time.between(from: article.creation_date, to: Date.today), price: rand(5.0..20.0), sub_article_type: "Kits") if [true,false].sample
+  article.sub_articles.create!(creation_date: Faker::Time.between(from: article.creation_date, to: Date.today), price: rand(5.0..20.0), sub_article_type: "kit") if [true,false].sample
 end
 puts "SubArticle seed Ok"
 
